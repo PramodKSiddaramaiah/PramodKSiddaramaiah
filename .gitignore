@@ -1,0 +1,11 @@
+# Don't want these files in your git repository
+**/node_modules
+**/values.local.yaml
+**/.env
+.env
+**/.env.test
+**/*.geojson
+**/*.kml
+scriptsToAutomate/**
+*/.npmrc
+.npmrc

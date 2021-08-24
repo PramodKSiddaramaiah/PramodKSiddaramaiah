@@ -1,0 +1,11 @@
+{
+    "baseUrl": "https://opsnet.gopuff.tech/",
+    "integrationFolder": "cypress/tests",
+    "defaultCommandTimeout": 6000,
+  "pageLoadTimeout": 120000,
+    "retries": {
+        "runMode": 3,
+        "openMode": 0
+    },
+    "experimentalStudio": true
+}

@@ -1,0 +1,21 @@
+{
+  "name": "cypree_practice",
+  "version": "1.0.0",
+  "description": "A sample project to experiment with cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pramod K Siddaramaiah",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^8.3.0"
+  },
+  "dependencies": {
+    "@gopuff/quality-engineering-tools": "^1.0.19",
+    "@okta/okta-auth-js": "^5.3.1",
+    "basic-auth": "^2.0.1",
+    "cheerio": "^1.0.0-rc.10",
+    "dotenv": "^10.0.0"
+  }
+}
