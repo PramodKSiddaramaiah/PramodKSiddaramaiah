@@ -1,5 +1,5 @@
 {
-    "baseUrl": "https://opsnet.gopuff.tech/",
+    "baseUrl": "http://localhost:3000/",
     "integrationFolder": "cypress/tests",
     "defaultCommandTimeout": 6000,
   "pageLoadTimeout": 120000,

@@ -24,16 +24,14 @@ module.exports = (on, config) => {
 require('dotenv').config({ path: '.env' })
 
 module.exports = (on, config) => {
+
+  config.env.OKTA_AUTHORIZATION_SERVER = process.env.OKTA_AUTHORIZATION_SERVER
+  config.env.OKTA_AUTHENTICATION_SERVER = process.env.OKTA_AUTHENTICATION_SERVER
+  config.env.OKTA_AUTHORIZATION_SERVER_ID = process.env.OKTA_AUTHORIZATION_SERVER_ID
+  config.env.OKTA_CLIENT_ID = process.env.OKTA_CLIENT_ID
+  config.env.OKTA_REDIRECT_URI = process.env.OKTA_REDIRECT_URI
+  config.env.OKTA_USER_NAME = process.env.OKTA_USER_NAME
+  config.env.OKTA_PASSWORD = process.env.OKTA_PASSWORD
   
-  config.env.auth_authorization = process.env.OKTA_AUTHORIZATION_SERVER
-  config.env.auth_authentication = process.env.OKTA_AUTHENTICATION_SERVER
-  config.env.auth_server_id = process.env.OKTA_AUTHORIZATION_SERVER_ID
-  config.env.auth_client_id = process.env.OKTA_CLIENT_ID
-  config.env.auth_redirect_url = process.env.OKTA_REDIRECT_URI
-  config.env.auth_username = process.env.OKTA_USER_NAME
-  config.env.auth_password = process.env.OKTA_PASSWORD
-
-  config.env.okta_domain = process.env.REACT_APP_OKTA_DOMAIN
-
- return config
+  return config
 }

@@ -15,20 +15,14 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
-
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
+const {getOktaAccessToken} = require("./okta-auth")
 
 beforeEach(() => { 
   cy.visit("/")
   cy.get('.MuiButton-label').click()
 
-  // Gopuff Implementation
-  cy.loginByOkta
+  getOktaAccessToken() 
 
-  // Cypress Okta Implementation 
-  //cy.loginByOktaApi(
-    //Cypress.env('auth_username'),
-    //Cypress.env('auth_password')
-  //)
+  //window.localStorage.setItem('oktaCypress', JSON.stringify(userItem))
+
 })
