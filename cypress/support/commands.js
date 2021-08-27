@@ -24,6 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import { OktaAuth } from '@okta/okta-auth-js'
+
 const { oktaAccessToken } = require('@gopuff/quality-engineering-tools/okta-auth')
 
 require('dotenv').config({ path: '.env' })
@@ -51,10 +52,11 @@ Cypress.Commands.add('loginByOkta', () => {
   )
 })
 
+
 Cypress.Commands.add('loginByOktaApi', (username = Cypress.env('auth_username'), password = Cypress.env('auth_password')) => {
   cy.request({
     method: 'POST',
-    url: `${Cypress.env('okta_domain')}/api/v1/authn`,
+    url: Cypress.env('OKTA_AUTHORIZATION_SERVER'),
     body: {
       username,
       password,
@@ -62,9 +64,15 @@ Cypress.Commands.add('loginByOktaApi', (username = Cypress.env('auth_username'),
   }).then((response) => {
     const user = response.body._embedded.user
     const config = {
+
       issuer: `${Cypress.env('okta_domain')}/oauth2/default`,
       clientId: Cypress.env('auth_client_id'),
       redirectUri: Cypress.env('auth_redirect_url'),
+
+      issuer: Cypress.env('OKTA_AUTHENTICATION_SERVER'),
+      clientId: Cypress.env('OKTA_CLIENT_ID'),
+      redirectUri: Cypress.env('OKTA_REDIRECT_URI'),
+
       scope: ['openid', 'email', 'profile'],
     }
     const authClient = new OktaAuth(config)

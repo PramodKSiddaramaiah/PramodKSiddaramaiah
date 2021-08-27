@@ -32,3 +32,19 @@ module.exports = (on, config) => {
   console.log(`config => ${JSON.stringify(config)}`)
  return config
 }
+}
+
+require('dotenv').config({ path: '.env' })
+
+module.exports = (on, config) => {
+
+  config.env.OKTA_AUTHORIZATION_SERVER = process.env.OKTA_AUTHORIZATION_SERVER
+  config.env.OKTA_AUTHENTICATION_SERVER = process.env.OKTA_AUTHENTICATION_SERVER
+  config.env.OKTA_AUTHORIZATION_SERVER_ID = process.env.OKTA_AUTHORIZATION_SERVER_ID
+  config.env.OKTA_CLIENT_ID = process.env.OKTA_CLIENT_ID
+  config.env.OKTA_REDIRECT_URI = process.env.OKTA_REDIRECT_URI
+  config.env.OKTA_USER_NAME = process.env.OKTA_USER_NAME
+  config.env.OKTA_PASSWORD = process.env.OKTA_PASSWORD
+  
+  return config
+}
