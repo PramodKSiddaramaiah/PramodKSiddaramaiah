@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "getOktaUser": "node -e 'require(\"./scripts/okta-auth.js\").getOktaAccessToken()'"
+    "getOktaUser": "node -e 'require(\"./scripts/okta-auth.js\").getOktaAccessToken()'",
+    "cy:open": "cypress open"
   },
   "author": "Pramod K Siddaramaiah",
   "license": "ISC",

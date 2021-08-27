@@ -18,11 +18,23 @@ import './commands'
 const {getOktaAccessToken} = require("./okta-auth")
 
 beforeEach(() => { 
-  cy.visit("/")
-  cy.get('.MuiButton-label').click()
+  // cy.visit("/")
+  // .get('.MuiButton-label').click()
+
+
+  // Gopuff Implementation
+  // cy.loginByOkta
 
   getOktaAccessToken() 
 
   //window.localStorage.setItem('oktaCypress', JSON.stringify(userItem))
 
+
+})
+
+Cypress.on('uncaught:exception', () => {
+  // returning false here prevents Cypress from
+  // failing the test when there are uncaught
+  // exceptions within the application under test
+  return false
 })

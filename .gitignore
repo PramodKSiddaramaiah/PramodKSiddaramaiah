@@ -9,3 +9,4 @@
 scriptsToAutomate/**
 */.npmrc
 .npmrc
+cypress.env.json
