@@ -11,7 +11,7 @@
 
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
-
+require('dotenv').config({ path: '.env' })
 /**
  * @type {Cypress.PluginConfig}
  */
@@ -19,12 +19,7 @@
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
-}
-
-require('dotenv').config({ path: '.env' })
-
-module.exports = (on, config) => {
-  
+    
   config.env.auth_authorization = process.env.OKTA_AUTHORIZATION_SERVER
   config.env.auth_authentication = process.env.OKTA_AUTHENTICATION_SERVER
   config.env.auth_server_id = process.env.OKTA_AUTHORIZATION_SERVER_ID
@@ -32,8 +27,8 @@ module.exports = (on, config) => {
   config.env.auth_redirect_url = process.env.OKTA_REDIRECT_URI
   config.env.auth_username = process.env.OKTA_USER_NAME
   config.env.auth_password = process.env.OKTA_PASSWORD
+  config.env.okta_domain = process.env.OKTA_DOMAIN
 
-  config.env.okta_domain = process.env.REACT_APP_OKTA_DOMAIN
-
+  console.log(`config => ${JSON.stringify(config)}`)
  return config
 }

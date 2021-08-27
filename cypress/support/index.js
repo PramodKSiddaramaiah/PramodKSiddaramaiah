@@ -20,15 +20,22 @@ import './commands'
 // require('./commands')
 
 beforeEach(() => { 
-  cy.visit("/")
-  cy.get('.MuiButton-label').click()
+  // cy.visit("/")
+  // .get('.MuiButton-label').click()
 
   // Gopuff Implementation
-  cy.loginByOkta
+  // cy.loginByOkta
 
   // Cypress Okta Implementation 
   //cy.loginByOktaApi(
     //Cypress.env('auth_username'),
     //Cypress.env('auth_password')
   //)
+})
+
+Cypress.on('uncaught:exception', () => {
+  // returning false here prevents Cypress from
+  // failing the test when there are uncaught
+  // exceptions within the application under test
+  return false
 })
